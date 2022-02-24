@@ -1,0 +1,18 @@
+# Build numbering format
+name: $(BuildID)
+
+trigger:
+  branches:
+    include:
+      - master
+      - feat/*
+  paths:
+    include:
+      - 'service-a-c/*'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - script: |
+      echo "Hello from 'a-c'"
